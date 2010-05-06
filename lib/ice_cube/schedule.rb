@@ -9,7 +9,7 @@ module IceCube
       @exrule_occurrence_heads = []
       @rdates = []
       @exdates = []
-      @start_date = start_date
+      @start_date = start_date.instance_of?(Date) ? start_date.to_time : start_date
     end
 
     # Convert the schedule to a hash, reverse of Schedule.from_hash
